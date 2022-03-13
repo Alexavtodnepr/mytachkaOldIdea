@@ -1,1 +1,149 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+main{
+  padding-top: 4em;
+}
+
+
+.container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 990px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 990px) {
+  .container {
+    padding-left: 15px;
+  }
+  .notbook {
+    width: 50%;
+    height: 50%;
+  }
+  .block4__block {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .block4__col {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .notbook {
+    width: 50%;
+    height: 50%;
+  }
+  .block6__col {
+    padding: 0 20px 20px 20px;
+  }
+  .block6__columns {
+    padding-top: 10px;
+  }
+  .block6__h3 {
+    font-size: 20px;
+  }
+  header .container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .block_one {
+    padding-top: 20.25em;
+    text-align: center;
+  }
+  .list__item {
+    padding: 10px;
+    background: #ffffff31;
+  }
+  .menu__top {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .menu__item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 0;
+    visibility: hidden;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    opacity: 0;
+  }
+  #toggle:checked + .menu__item {
+    opacity: 1;
+    visibility: visible;
+  }
+  [for="toggle"] {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .container {
+    padding: 15px;
+  }
+  .block3-card {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .notbook {
+    display: none;
+  }
+}
