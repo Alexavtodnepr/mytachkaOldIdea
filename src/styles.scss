@@ -32,7 +32,7 @@ main{
   width: 100%;
   max-width: 990px;
   margin: 0 auto;
-  color: #ffffff;
+  color: #afacac;
 }
 
 @media screen and (max-width: 990px) {
@@ -147,3 +147,6 @@ main{
     display: none;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -12,6 +12,8 @@ import { CalculatorsComponent } from './layouts/main-pages/calculators/calculato
 import { BusinessPageComponent } from './layouts/main-pages/business-page/business-page.component';
 import { LoginComponent } from './layouts/main-pages/login/login.component';
 import { ForUsersComponent } from './layouts/main-pages/for-users/for-users.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ForUsersComponent } from './layouts/main-pages/for-users/for-users.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

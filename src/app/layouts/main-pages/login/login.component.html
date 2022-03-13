@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div class="container">
+  <ng-container>
+    <form class="login form">
+      <div class="form-container">
+        <div class="field name">
+          <label for="login">Name</label>
+          <input type="text" id="login">
+        </div>
+        <div class="field password">
+          <label for="password">Password</label>
+          <input type="text" id="password">
+        </div>
+        <div class="field btnGr">
+          <button mat-button routerLink="/">Back</button>
+          <button mat-button color="primary">Login</button>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+</div>
