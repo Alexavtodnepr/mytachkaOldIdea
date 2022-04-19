@@ -1,0 +1,38 @@
+.sidebar{
+  height: 100vh;
+  z-index: 1000;
+  width: 280px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: black;
+  color: #656b74;
+  border-right: 1px solid white;
+}
+.container-user{
+  height: 60vh;
+  width: 100%;
+}
+
+.sidebar{
+  padding: 20px;
+  font-size: 25px;
+  & li{
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+    &:hover{
+      text-decoration: underline;
+      opacity: .8;
+      background-color: rgba(128, 128, 128, 0.4);
+    }
+    &:last-child{
+      position: absolute;
+      bottom: 30px;
+    }
+    &:nth-last-child(2){
+      position: absolute;
+      bottom: 70px;
+    }
+  }
+}
