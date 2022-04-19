@@ -1,3 +1,69 @@
-<div class="conatainer">
-<p>calculators works!</p>
+<div class="container">
+  <div class="calc-header"><h2>{{headerCalc== ''? 'Разные расчеты': headerCalc}}</h2></div>
+  <div class="calculators-input">
+    <label class="calc-inp" for="calc-inp">Выберете категорию: </label>
+    <select (change)="selectedVal($event)" class="calc-inp" id="calc-inp">
+      <option value="None"> </option>
+      <option value="val2">Расход топлива л/100</option>
+      <option value="val3">Расход топлива по пробегу</option>
+    </select>
+  </div>
+  <div class="calc-container">
+    <ng-container *ngIf="litres">
+      <div class="calculators-field">
+      <div class="calc-field">
+        <label for="millage">Израсходовано топлива:
+        </label>
+        <input (input)="litreCalc($event)" id="millage" type="text">
+      </div>
+      <div class="calc-field">
+        <label for="">Пройденное растояние:
+        </label>
+        <input (input)="distanceCalc($event)" type="text">
+      </div>
+      <div class="calc-field">
+        <label for="">Стоимость топлива:
+        </label>
+        <input (input)="calcPrice($event)" type="text">
+      </div>
+      <div class="calc-field">
+        <p class="label">Средний расход топлива :</p><p class="input">{{rate}}</p>
+      </div>
+      <div class="calc-field">
+        <p class="label">Стоимость 1 километра :</p><p class="input">{{priceOneL}}</p>
+      </div>
+    </div>
+      <div class="image-field">
+        <img src="data:image/jpeg;base64,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" alt="расход">
+      </div>
+  </ng-container>
+    <ng-container *ngIf="killometres">
+      <div class="calculators-field">
+        <div class="calc-field">
+          <label for="millage">Средний расход топлива : </label>
+            <input id="" (input)="fuelLeave($event)" type="text">
+        </div>
+        <div class="calc-field">
+          <label for="">Расстояние поездки :</label>
+            <input type="text" (input)="calcDistanceTrip($event)">
+        </div>
+        <div class="calc-field">
+          <label for="">Стоимость топлива :</label>
+            <input type="text" (input)="calcCostFuel($event)">
+        </div>
+        <div class="calc-field">
+          <p class="label">Суммарный расход :</p><p class="input">{{total}}</p>
+        </div>
+        <div class="calc-field">
+          <p class="label">Общая стоимость поездки :</p><p class="input">{{priceOneL}}</p>
+        </div>
+      </div>
+      <div class="image-field">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgZiEMNC8djEyLTOZPrLUn3C0TcQ0_M7RmAg&usqp=CAU" alt="расход">
+      </div>
+
+    </ng-container>
+
+  </div>
+
 </div>

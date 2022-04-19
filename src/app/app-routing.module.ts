@@ -6,6 +6,9 @@ import {CalculatorsComponent} from "./layouts/main-pages/calculators/calculators
 import {BusinessPageComponent} from "./layouts/main-pages/business-page/business-page.component";
 import {LoginComponent} from "./layouts/main-pages/login/login.component";
 import {ForUsersComponent} from "./layouts/main-pages/for-users/for-users.component";
+import {UserModule} from "./user-layout/user.module";
+import {UserComponent} from "./user-layout/user/user.component";
+import {AuthGuard} from "./shared/auth.guard";
 
 const routes: Routes = [
   {path: '', component: MainLayoutComponent, children:[
@@ -16,8 +19,8 @@ const routes: Routes = [
   {path: 'business', component: BusinessPageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'forusers', component: ForUsersComponent},
-  {path: 'user', loadChildren: () => import ('./admin-layout/admin.module').then(m => m.AdminModule)},
-  {path: 'user/:id', loadChildren: () => import ('./user-layout/user.module').then(m => m.UserModule)}
+  {path: 'admin', canActivate:[AuthGuard],loadChildren: () => import ('./admin-layout/admin.module').then(m => m.AdminModule)},
+  {path: 'user', canActivate:[AuthGuard],loadChildren: () => import ('./user-layout/user.module').then(m => m.UserModule)},
 ];
 
 @NgModule({

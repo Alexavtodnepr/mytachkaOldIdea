@@ -1,10 +1,15 @@
+export interface AuthUser{
+  email: string;
+  password: string;
+  returnSecureToken?: boolean
+}
+
 //user
 export interface User {
   login: string;
   nickname: string;
   password: string;
-  Cars: Car[];
-  registered: boolean;
+  cars: Car[];
   admin: string;
   email: string;
 }
@@ -51,4 +56,13 @@ export interface Recomendation{
   name: string;
   millage: number;
   abtPrice: number;
+}
+
+export interface fbCreateResponse{
+  name: string
+}
+
+export interface  FbAuthResponse{
+  idToken: string,
+  expiresIn: string
 }

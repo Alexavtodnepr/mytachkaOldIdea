@@ -1,18 +1,27 @@
 <div class="container">
   <ng-container>
-    <form class="login form">
+    <form
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+      *ngIf="form"
+      class="login form">
       <div class="form-container">
         <div class="field name">
           <label for="login">Name</label>
-          <input type="text" id="login">
+          <input type="text" id="login"
+          formControlName="email">
         </div>
         <div class="field password">
           <label for="password">Password</label>
-          <input type="text" id="password">
+          <input type="password" id="password"
+          formControlName="password">
         </div>
         <div class="field btnGr">
-          <button mat-button routerLink="/">Back</button>
-          <button mat-button color="primary">Login</button>
+          <button type="button" mat-button (click)="logout()">Back</button>
+          <button mat-button color="primary" type="submit"
+          >Login</button>
+<!--          [routerLink]="['/user']"-->
+
         </div>
       </div>
     </form>
