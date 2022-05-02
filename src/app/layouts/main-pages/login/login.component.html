@@ -1,3 +1,5 @@
+<app-header></app-header>
+<h2>Enter to system</h2>
 <div class="container">
   <ng-container>
     <form
@@ -13,15 +15,15 @@
         </div>
         <div class="field password">
           <label for="password">Password</label>
-          <input type="password" id="password"
-          formControlName="password">
+          <input type="{{typeInput? 'password' : 'text'}}" id="password"
+                 formControlName="password">
+          <span class="span" (click)="typeInput = !typeInput">{{typeInput? '+': '-'}}</span>
         </div>
         <div class="field btnGr">
           <button type="button" mat-button (click)="logout()">Back</button>
+          <button type="button" mat-button routerLink="/register">Register</button>
           <button mat-button color="primary" type="submit"
           >Login</button>
-<!--          [routerLink]="['/user']"-->
-
         </div>
       </div>
     </form>

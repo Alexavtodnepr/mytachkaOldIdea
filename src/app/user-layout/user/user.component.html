@@ -2,22 +2,31 @@
   <div class="sidebar">
   <nav class="sidebar">
     <ul>
-      <li>My profile</li>
-      <li>My cars</li>
-      <li>Fuel and gas station</li>
-      <li>Technical inspection</li>
-      <li>Сar service</li>
-      <li>Calculations</li>
-      <li>Car insurance</li>
-      <li>Notes</li>
-      <li>Call to us</li>
-      <li>Settings</li>
+      <li [routerLink]="['userprofile']">My profile</li>
+      <li [routerLink]="['mycars']">My cars</li>
+      <li [routerLink]="['fuelgas']">Fuel and gas station</li>
+      <li [routerLink]="['techinspect']">Technical inspection</li>
+      <li [routerLink]="['carservices']">Сar service</li>
+      <li [routerLink]="['usercalculate']">Calculations</li>
+      <li [routerLink]="['carinsurance']">Car insurance</li>
+      <li [routerLink]="['notes']">Notes</li>
+      <li [routerLink]="['callback']">Call to us</li>
+      <li [routerLink]="['usersettings']">Settings</li>
       <li (click)="exit()">Exit</li>
     </ul>
   </nav>
 </div></ng-container>
+  <div class="user-header" *ngIf="$user; else loader">
+    <h2>{{$user.email}}</h2>
+    <button (click)="saveChanges()" mat-stroked-button><mat-icon>save</mat-icon>  Save changes</button>
+  </div>
 <div class="container">
-  <div class="container-user">
-    <p>user works!</p>
+  <div class="container-user" *ngIf="!withoutData">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="container-user" *ngIf="withoutData">
+    <p>You are not have data!</p>
+    <button (click)="createData()">Create!</button>
   </div>
 </div>
+<ng-template #loader>Loading</ng-template>

@@ -9,6 +9,7 @@ import {ForUsersComponent} from "./layouts/main-pages/for-users/for-users.compon
 import {UserModule} from "./user-layout/user.module";
 import {UserComponent} from "./user-layout/user/user.component";
 import {AuthGuard} from "./shared/auth.guard";
+import {RegisterComponent} from "./layouts/main-pages/register/register.component";
 
 const routes: Routes = [
   {path: '', component: MainLayoutComponent, children:[
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'calculators', component: CalculatorsComponent},
   {path: 'business', component: BusinessPageComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {path: 'forusers', component: ForUsersComponent},
   {path: 'admin', canActivate:[AuthGuard],loadChildren: () => import ('./admin-layout/admin.module').then(m => m.AdminModule)},
   {path: 'user', canActivate:[AuthGuard],loadChildren: () => import ('./user-layout/user.module').then(m => m.UserModule)},

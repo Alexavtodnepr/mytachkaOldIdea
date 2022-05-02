@@ -36,3 +36,22 @@
     }
   }
 }
+.user-header{
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  background: black;
+  padding: 10px;
+  & h2{
+    margin: 10px;
+  }
+  & button{
+    margin: 10px;
+  }
+}
+
+
+
+

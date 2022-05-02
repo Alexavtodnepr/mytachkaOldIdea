@@ -6,10 +6,11 @@ export interface AuthUser{
 
 //user
 export interface User {
-  login: string;
-  nickname: string;
+  UID: string
+  firstaName?: string;
+  LastName?: string;
   password: string;
-  cars: Car[];
+  cars?: Car[];
   admin: string;
   email: string;
 }
@@ -64,5 +65,7 @@ export interface fbCreateResponse{
 
 export interface  FbAuthResponse{
   idToken: string,
-  expiresIn: string
+  expiresIn: string,
+  localId: string,
+  email: string
 }

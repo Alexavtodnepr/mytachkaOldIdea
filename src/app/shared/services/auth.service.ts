@@ -30,14 +30,15 @@ export class AuthService {
         catchError(this.handleError.bind(this))
       )
   }
-  getText(){
-    // let  = '';
-    return this.http.get<any>('https://www.avtoboss.com.ua/mrkoote.php?gr=НП18-2/9' )
-  }
+  // getText(){
+  //   // let  = '';
+  //   return this.http.get<any>('https://www.avtoboss.com.ua/mrkoote.php?gr=НП18-2/9' )
+  // }
 
   logout() {
-    this.router.navigate(['login'])
+    // this.router.navigate(['/login'])
     this.setToken(null);
+    sessionStorage.clear();
   }
 
   isAuthenticated(): boolean{
@@ -49,12 +50,16 @@ export class AuthService {
     switch (message) {
       case 'INVALID_ID_EMAIL':
         this.error$.next('This email is wrong!');
+        console.log('This email is wrong!')
         break;
       case 'INVALID_PASSWORD':
         this.error$.next('This password is wrong!');
+        console.log('This password is wrong!');
         break
       case 'EMAIL_NOT_FOUND':
-        this.error$.next('This email is not registered!')
+        this.error$.next('This email is not registered!');
+        console.log('This email is not registered!');
+        this.router.navigate(['/register'])
         break
     }
   }
@@ -63,9 +68,13 @@ export class AuthService {
     if (response){
       const expDate = new Date(new Date().getTime() + +response.expiresIn * 1000);
       localStorage.setItem('fb-token', response.idToken);
-      localStorage.setItem('fb-token-exp', expDate.toString())
+      sessionStorage.setItem('fb-userUID', response.localId);
+      sessionStorage.setItem('fb-email', response.email);
+      localStorage.setItem('fb-token-exp', expDate.toString());
     } else {
       localStorage.clear();
+      sessionStorage.clear();
+      // this.router.navigate(['/login'])
     }
 
   }

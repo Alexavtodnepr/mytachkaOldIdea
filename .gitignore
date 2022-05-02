@@ -1,5 +1,6 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
-
+/src/environments
+/src/app/shared/services/auth.service.ts
 # compiled output
 /dist
 /tmp
