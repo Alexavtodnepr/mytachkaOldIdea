@@ -78,13 +78,4 @@ export class AuthService {
     }
 
   }
-}
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCQp1E360h9Kxjk-WsZJ7Dbr7slk4KY9eI",
-//   authDomain: "mytachka-ua.firebaseapp.com",
-//   projectId: "mytachka-ua",
-//   storageBucket: "mytachka-ua.appspot.com",
-//   messagingSenderId: "569157894914",
-//   appId: "1:569157894914:web:fcf29238b2a843f654b81b",
-//   measurementId: "G-WZ4FVMB84T"
-// };
+};

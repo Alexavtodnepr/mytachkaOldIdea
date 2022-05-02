@@ -1,0 +1,32 @@
+<app-header></app-header>
+<h2>Register now</h2>
+<div class="container">
+  <ng-container>
+    <form
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+      *ngIf="form"
+      class="login form">
+      <div class="form-container">
+        <div class="field name">
+          <label for="login">Name</label>
+          <input type="text" id="login"
+                 formControlName="email">
+        </div>
+        <div class="field password">
+          <label for="password">Password</label>
+          <input type="{{typeInput? 'password' : 'text'}}" id="password"
+                 formControlName="password">
+          <span class="span" (click)="typeInput = !typeInput">{{typeInput? '+': '-'}}</span>
+        </div>
+        <div class="field btnGr">
+          <button type="button" mat-button (click)="back()">Back</button>
+          <button mat-button color="primary" type="button" routerLink="/login"
+          >Login</button>
+          <button mat-button color="primary" type="submit"
+          >Register</button>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+</div>

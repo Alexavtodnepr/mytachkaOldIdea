@@ -1,0 +1,41 @@
+<div class="content" *ngIf="user; else loader">
+  <h2>My profile</h2>
+  <div class="wrapper">
+    <div class="left-block">
+      <div class="block-email row">
+        <p class="field label">My email: </p>
+        <p class="input">{{user.email}}</p>
+      </div>
+      <div class="block-email row">
+        <p class="field label">My password: </p>
+        <p class="input">{{user.password}}</p>
+      </div>
+      <div class="block-email row">
+        <label class="field label">My Firstname: </label>
+        <input class="input">
+      </div>
+      <div class="block-email row">
+        <label class="field label">My Lastname: </label>
+        <input class="input">
+      </div>
+      <div class="block-email row">
+        <label class="field label">My Country: </label>
+        <select class="input" >
+          <option *ngFor="let country of countries">{{country}}</option>
+        </select>
+      </div>
+      <div class="block-email row">
+        <label class="field label">My Cars: </label>
+        <p class="input">{{carArray.length}}<span class="details-link" matBadge="{{carArray.length}}" routerLink="../mycars" matBadgeOverlap="false"><mat-icon> directions_car</mat-icon></span></p>
+      </div>
+    </div>
+    <div class="right-block">
+      <div class="rigth-block__image">
+        <img class="avatare" alt="user-avatar" src="https://cdn-icons-png.flaticon.com/512/21/21104.png">
+        <button mat-fab type="button" color="primary"><mat-icon>add_a_photo</mat-icon></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loader>Loading...</ng-template>

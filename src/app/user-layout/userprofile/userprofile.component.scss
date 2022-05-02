@@ -1,0 +1,44 @@
+.row{
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  padding: 10px;
+  font-size: 25px;
+  flex-wrap: wrap;
+  //justify-content: space-between;
+  & .label{
+    width: 300px;
+  }
+  & .input{
+    width: 250px;
+  }
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.left-block{
+  width: 650px;
+  height: 100%;
+}
+.right-block{
+  width: 310px;
+  height: 310px;
+  border: 1px solid black;
+  border-radius: 10px;
+  &__image {
+  }
+}
+.avatare{
+  width: 300px;
+  height: 300px;
+}
+
+.details-link{
+  margin-left: 200px;
+  cursor: pointer;
+
+}
