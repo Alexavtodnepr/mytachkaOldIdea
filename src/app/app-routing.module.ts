@@ -21,8 +21,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'forusers', component: ForUsersComponent},
-  {path: 'admin', canActivate:[AuthGuard],loadChildren: () => import ('./admin-layout/admin.module').then(m => m.AdminModule)},
-  {path: 'user', canActivate:[AuthGuard],loadChildren: () => import ('./user-layout/user.module').then(m => m.UserModule)},
+  {path: 'admin',loadChildren: () => import ('./admin-layout/admin.module').then(m => m.AdminModule)},
+  {path: 'user',loadChildren: () => import ('./user-layout/user.module').then(m => m.UserModule)},
 ];
 
 @NgModule({
